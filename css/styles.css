@@ -18,7 +18,15 @@ h1, h2, p {
     clear: both;
     display: table;
 }
+
+input, select {
+    outline: none;
+}
   
+.incorrecto {
+    border: 2px solid red;
+}
+
 
 /* HEADER */
 header {
@@ -90,10 +98,33 @@ main > form input, main > form select {
 #input-juntos {
     display: flex;
     justify-content: space-between;
+    position: relative;
+    width: 100%;
 }
 
 #input-juntos > input {
     width: 49%;
+}
+
+
+#coincidencias {
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    top: 54px;
+    z-index: 500;
+}
+#coincidencias p {
+    background-color: #1135a7;
+    padding: 5px 10px;
+    width: 100%;
+    margin: 2px 0;
+}
+#coincidencias p:hover {
+    color: black;
+    background-color: #fcd12a;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .input-juntos-3 {

@@ -23,23 +23,24 @@
     </header>
 
     <main>
-        <form>
+        <form id='form'>
             <!-- PRIMER FORM -->
             <div class='container-form'>
                 <h2>Your Company Information</h2>
 
-                <input type='text' placeholder='Company Name' />
-                <input type='text' placeholder='DBA' />
-                <input type='text' placeholder='Full Name' />
-                <input type='text' placeholder='US DOT #' >
-                <input type='text' placeholder='Phone' />
-                <input type='email' placeholder='Email' />
-                <input type='text' placeholder='Address' />
+                <input name='company' id='company' type='text' placeholder='Company Name' />
+                <input required name='dba' id='dba' type='text' placeholder='DBA' />
+                <input name='name' id='name' type='text' placeholder='Full Name' />
+                <input name='usdot' id='usdot' type='number' placeholder='US DOT #' >
+                <input name='phone' id='phone' type='text' placeholder='Phone' data-format="(***) ***-****" data-mask="(###) ###-####" />
+                <input name='email' id='email' type='email' placeholder='Email' />
+                <input name='address' id='address' type='text' placeholder='Address' />
                 <div id='input-juntos'>
-                    <input type='text' placeholder='Zip' />
-                    <input type='text' placeholder='City' />
+                    <input id='zip' type='text' placeholder='Zip' />
+                    <div id='coincidencias'></div>
+                    <input id='city' type='text' placeholder='City' disabled />
                 </div>
-                <select>
+                <select id='state' disabled>
                     <option>State</option>
                 </select>
             </div>
@@ -83,20 +84,20 @@
                     <p>Safe money transfer using your bank account. Visa, Maestro, Discover, American Express.</p>
 
                     <label>CARD NUMBER</label>
-                    <input type='text' placeholder='XXXX-XXXX-XXXX-XXXX' />
+                    <input id='card' name='card' type='text' data-format="****-****-****-****" data-mask="####-####-####-####" />
 
                     <div class='input-juntos-3'>
                         <div>
                             <label>NAME ON CARD</label>
-                            <input type='text' />
+                            <input id='namecard' name='namecard' type='text' />
                         </div>
                         <div>
                             <label>EXPIRY DATE</label>
-                            <input type='text' placeholder='MM/YY' />
+                            <input id='expire' name='expire' type='text' placeholder='MM/YY' />
                         </div>
                         <div>
                             <label>CVV CODE</label>
-                            <input type='text' />
+                            <input id='cvv' name='cvv' type='text' data-format="***" data-mask="###" />
                         </div>
                     </div>
 
@@ -106,15 +107,16 @@
                     <div class='input-juntos-3'>
                         <div>
                             <label>BILLING ZIP CODE</label>
-                            <input type='text' />
+                            <input id='zip2' name='zip2' type='text' />
+                            <div id='coincidencias2' class='coincidencias'></div>
                         </div>
                         <div>
                             <label>CITY</label>
-                            <input type='text' />
+                            <input id='city2' name='city2' type='text' />
                         </div>
                         <div>
                             <label>STATE</label>
-                            <select>
+                            <select id='state2' name='state2'>
                                 <option></option>
                             </select>
                         </div>
@@ -154,11 +156,13 @@
                             <label>I agree to the terms and conditions</label>
                         </div>
 
-                        <button>PLACE ORDER</button>
+                        <button type='submit'>PLACE ORDER</button>
                     </div>
                 </div>
             </div>
         </form>
     </main>
 </body>
+
+<script src="js/index.js"></script>
 </html>
